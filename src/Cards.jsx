@@ -1,5 +1,7 @@
 import React from 'react'
 import Card from './Card';
+import styles from "./styles.module.css";
+
 
 export default function Cards() {
       const userData = [ 
@@ -111,18 +113,22 @@ export default function Cards() {
 
 ]; 
   return (
-    <div>
-      {userData.map((user)=>(
-            <Card key={user}
-            id={user.id}
-            name={user.name}
-            description={user.description}
-            imageUrl={user.imageUrl}
-            age={user.age}
-            mobilite={user.mobilite}
-            interests={user.interests}
-            />
-          ))}
-    </div>
+ <div className={styles.usPro}>
+    {userData.map((user) => (
+        <Card
+        key={user.id}
+          id={user.id}
+          name={user.name}
+          description={user.description}
+          imageUrl={user.imageUrl}
+          age={user.age}
+          mobilite={user.mobilite}
+          disponibilité={user.disponibilité}
+          location={user.location}
+          interests={user.interests}
+        />
+    ))}
+</div>
+
   )
 }
